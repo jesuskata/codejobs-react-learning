@@ -76,7 +76,7 @@ const getLoaders = () => ({
       loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
     }
   ]
-})
+});
 
 // Webpack Config
 export default {
@@ -84,5 +84,5 @@ export default {
   entry: getEntry(),
   output: getOutput(),
   plugins: getPlugins(),
-  module: getLoaders(),
+  module: getLoaders()
 };

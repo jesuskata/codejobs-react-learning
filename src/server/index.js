@@ -20,7 +20,7 @@ import * as hbsHelper from '../lib/handlebars';
 import { isMobile } from '../lib/utils/device';
 
 // Server Port
-const port = 3000
+const port = 3000;
 
 // Environment
 const isDevelopment = process.env.NODE_ENV !== 'production';
