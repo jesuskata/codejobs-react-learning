@@ -13,10 +13,11 @@ import items from '../data/menu';
 class App extends Component {
   static propTypes = {
     children: PropTypes.object.isRequired
-  }
+  };
 
   render() {
     const { children } = this.props;
+
     return (
       <div className="App">
         <Header

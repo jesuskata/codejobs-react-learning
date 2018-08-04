@@ -13,7 +13,7 @@ Router.get('/posts', (req, res, next) => {
 });
 
 Router.get('/post', (req, res, next) => {
-  res.json(post)
+  res.json(post);
 });
 
 export default Router;

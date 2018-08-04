@@ -15,9 +15,9 @@ class Home extends Component {
       <div className="Home">
         <h1>Home Page</h1>
 
-        <h2>
+        <p>
           {isMobile ? 'Mobile device' : 'Desktop device'}
-        </h2>
+        </p>
       </div>
     );
   }

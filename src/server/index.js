@@ -25,13 +25,13 @@ const port = 3000;
 // Environment
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
-// Express App
+// Express app
 const app = express();
 
 // Public
 app.use(express.static(path.join(__dirname, '../public')));
 
-// Handlebars Setup
+// Handlebars setup
 app.engine('.hbs', exphbs({
   extname: '.hbs',
   helpers: hbsHelper
@@ -44,30 +44,29 @@ app.set('view engine', '.hbs');
 // Webpack Compiler
 const webpackCompiler = webpack(webpackConfig);
 
-if(isDevelopment) {
-  // Webpack Middleware
+if (isDevelopment) {
   app.use(webpackDevMiddleware(webpackCompiler));
   app.use(webpackHotMiddleware(webpackCompiler));
 }
 
-// Device Detector
+// Device detector
 app.use((req, res, next) => {
   res.locals.isMobile = isMobile(req.headers['user-agent']);
 
   return next();
 });
 
-// API Dispatch
+// API dispatch
 app.use('/api/blog', blogApi);
 
-// Sending all trafic to React
+// Sending all the traffic to React
 app.get('*', (req, res) => {
   res.render('frontend/index', {
     layout: false
   });
 });
 
-// Listen Port
+// Listen port 3000
 app.listen(port, err => {
   if (!err) {
     open(`http://localhost:${port}`);

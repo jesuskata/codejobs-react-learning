@@ -14,20 +14,18 @@ class Header extends Component {
   };
 
   render() {
-    // console.log(this.props);
-    // const title = this.props.title;
-    // const items = this.props.items;
     const { title, items } = this.props;
 
     return (
       <div className="Header">
         <div className="Logo">
           <img src={logo} alt="logo" />
-          <h2>{ title }</h2>
+          <h2>{title}</h2>
+
           <ul className="Menu">
             {
               items && items.map(
-                (item, key) => <li key={key}><Link to={item.url}>{ item.title }</Link ></li>
+                (item, key) => <li key={key}><Link to={item.url}>{item.title}</Link></li>
               )
             }
           </ul>

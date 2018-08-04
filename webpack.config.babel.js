@@ -14,25 +14,20 @@ const PATHS = {
 };
 
 const getDevtool = () => 'cheap-module-eval-source-map';
-
 const getEntry = () => {
-  const entry = [
-    PATHS.index
-  ];
+  const entry = [PATHS.index];
 
   if (isDevelopment) {
-    entry.push('webpack-hot-middleware/client?reload=true')
+    entry.push('webpack-hot-middleware/client?reload=true');
   }
 
   return entry;
 };
-
 const getOutput = () => ({
   path: PATHS.build,
   publicPath: '/',
   filename: '[name].bundle.js'
 });
-
 const getPlugins = () => {
   const plugins = [
     new ChunksPlugin({
@@ -59,7 +54,6 @@ const getPlugins = () => {
 
   return plugins;
 };
-
 const getLoaders = () => ({
   loaders: [
     {
@@ -78,7 +72,6 @@ const getLoaders = () => ({
   ]
 });
 
-// Webpack Config
 export default {
   devtool: getDevtool(),
   entry: getEntry(),
