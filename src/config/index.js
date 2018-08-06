@@ -9,4 +9,4 @@ export default {
     extension: '.hbs',
     path: './views'
   }
-}
+};

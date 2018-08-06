@@ -22,6 +22,8 @@ export function apiFetch(endpoint, options = {}, query = false) {
       throw e;
     }
   };
+
+  return getPromise();
 }
 
 export function apiEndpoint(endpoint, qs) {
